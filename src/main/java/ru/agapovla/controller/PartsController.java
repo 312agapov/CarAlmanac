@@ -1,0 +1,9 @@
+package ru.agapovla.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class PartsController {
+
+}
+

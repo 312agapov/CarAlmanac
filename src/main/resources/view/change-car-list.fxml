@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="179.0" prefWidth="479.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.agapovla.controller.CarsController">
+    <children>
+        <Label layoutX="42.0" layoutY="22.0" style="-fx-font-size: 18;" text="Тут вы можете внести изменения в список авто" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="179.0" prefWidth="374.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.agapovla.controller.MainController">
+    <children>
+        <Label layoutX="49.0" layoutY="21.0" style="-fx-font-size: 18;" text="Добро пожаловать в CarAlmanac!" />
+        <Button layoutX="70.0" layoutY="77.0" mnemonicParsing="false" onAction="#chooseCar" text="Выбрать авто для просмотра запчастей" />
+        <Button layoutX="89.0" layoutY="131.0" mnemonicParsing="false" onAction="#changeCarList" text="Внести изменения в список авто" />
+    </children>
+</AnchorPane>
