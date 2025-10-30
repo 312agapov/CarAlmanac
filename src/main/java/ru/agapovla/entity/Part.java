@@ -21,4 +21,8 @@ public class Part {
     private Boolean doesFit;
     private Boolean isInstalled;
 
+    @ManyToOne
+    @JoinColumn(name = "car_id")
+    private Car car;
+
 }

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.agapovla.entity.Car;
 import ru.agapovla.repository.CarRepository;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.UUID;
 
@@ -30,7 +31,11 @@ public class CarService {
                 new NoSuchElementException("GET: Авто по такому UUID не найдено!"));
     }
 
-    public Car editCarById(Car car){
+    public List<Car> getAllCars(){
+        return carRepository.findAll();
+    }
+
+    public Car editCar(Car car){
         return carRepository.save(car);
     }
 

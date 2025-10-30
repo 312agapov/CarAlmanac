@@ -1,28 +1,23 @@
 package ru.agapovla.controller;
 
 import javafx.fxml.FXML;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import ru.agapovla.manager.WindowManager;
 
 @Controller
+@RequiredArgsConstructor
 public class MainController {
 
     private final WindowManager windowManager;
 
-
-    @Autowired
-    public MainController(WindowManager windowManager) {
-        this.windowManager = windowManager;
+    @FXML
+    public void onChooseCar(){
+        windowManager.openWindow("/view/cars/car-choose.fxml", "Выбор для авто для поиска запчастей", 800, 600);
     }
 
     @FXML
-    public void chooseCar() {
-        windowManager.openWindow("/view/choose-car.fxml", "Выбор авто", -1, -1);
-    }
-
-    @FXML
-    public void changeCarList() {
-        windowManager.openWindow("/view/change-car-list.fxml", "Редактирование списка авто", -1, -1);
+    public void onEditCars(){
+        windowManager.openWindow("/view/cars/cars-edit.fxml", "Меню редактирования парка авто!", 800, 600);
     }
 }

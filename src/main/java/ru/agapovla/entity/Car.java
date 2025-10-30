@@ -1,13 +1,19 @@
 package ru.agapovla.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
 @Data
 @Table(name = "cars")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class Car {
 
     @Id
@@ -24,5 +30,8 @@ public class Car {
 
     private String engineModel;
     private String transmissionType;
+
+    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Part> parts = new ArrayList<>();
 
 }

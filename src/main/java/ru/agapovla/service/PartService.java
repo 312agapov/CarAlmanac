@@ -31,11 +31,11 @@ public class PartService {
                 new NoSuchElementException("GET: Запчасти по такому UUID не найдено!"));
     }
 
-    public List<Part> getAllParts(){
-        return partRepository.findAll();
+    public List<Part> getPartsByCarId(UUID carId){
+        return partRepository.findPartsByCarId(carId);
     }
 
-    public Part editPartById(Part part){
+    public Part editPart(Part part){
         return partRepository.save(part);
     }
 

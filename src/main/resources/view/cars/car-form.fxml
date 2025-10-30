@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="179.0" prefWidth="374.0" xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.agapovla.controller.car.CarFormController">
+
+    <Label layoutX="40.0" layoutY="21.0" style="-fx-font-size: 18;" text="Меню добавления нового авто!"/>
+
+    <Label layoutX="20" layoutY="60" text="Марка:"/>
+    <TextField fx:id="markField" layoutX="130" layoutY="60"/>
+
+    <Label layoutX="20" layoutY="100" text="Модель:"/>
+    <TextField fx:id="modelField" layoutX="130" layoutY="100"/>
+
+    <Label layoutX="20" layoutY="140" text="Поколение:"/>
+    <TextField fx:id="generationField" layoutX="130" layoutY="140"/>
+
+    <Label layoutX="20" layoutY="180" text="Год:"/>
+    <TextField fx:id="yearField" layoutX="130" layoutY="180"/>
+
+    <Label layoutX="20" layoutY="220" text="Номер:"/>
+    <TextField fx:id="gosNumberField" layoutX="130" layoutY="220"/>
+
+    <Label layoutX="20" layoutY="260" text="Вин/Фрейм:"/>
+    <TextField fx:id="vinOrFrameField" layoutX="130" layoutY="260"/>
+
+    <Label layoutX="20" layoutY="300" text="Модель двигателя:"/>
+    <TextField fx:id="engineModelField" layoutX="130" layoutY="300"/>
+
+    <Label layoutX="20" layoutY="340" text="Тип трансмиссии:"/>
+    <TextField fx:id="transmissionTypeField" layoutX="130" layoutY="340"/>
+
+    <Button layoutX="20.0" layoutY="380.0" mnemonicParsing="false" onAction="#onSaveCar"
+            text="Сохранить!"/>
+
+</AnchorPane>
