@@ -6,7 +6,6 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import ru.agapovla.entity.Car;
 import ru.agapovla.entity.Part;
 import ru.agapovla.manager.WindowManager;
 import ru.agapovla.service.CarService;
@@ -43,5 +42,10 @@ public class PartController {
                 }
             }
         });
+    }
+
+    @FXML
+    public void onBack() {
+        windowManager.replaceWindow("/view/cars/car-choose.fxml", null, partList, null);
     }
 }

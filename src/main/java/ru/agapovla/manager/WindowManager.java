@@ -1,6 +1,7 @@
 package ru.agapovla.manager;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -41,4 +42,29 @@ public class WindowManager {
             e.printStackTrace();
         }
     }
+
+    public <T> void replaceWindow(String fxml, String title, Node anyNodeInCurrentWindow, Consumer<T> controllerInit) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+            loader.setControllerFactory(context::getBean);
+            Parent newContent = loader.load();
+
+            T controller = loader.getController();
+            if (controllerInit != null){
+                controllerInit.accept(controller);
+            }
+
+            Scene scene = anyNodeInCurrentWindow.getScene();
+            scene.setRoot(newContent);
+
+            Stage stage = (Stage) scene.getWindow();
+            if (title != null) {
+                stage.setTitle(title);
+            }
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
+

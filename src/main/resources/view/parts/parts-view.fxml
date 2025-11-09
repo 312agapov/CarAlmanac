@@ -12,4 +12,6 @@
               layoutX="40.0" layoutY="50.0"
               prefWidth="520.0"
               prefHeight="300.0"/>
+
+    <Button layoutX="40.0" layoutY="370.0" text="Назад" onAction="#onBack"/>
 </AnchorPane>

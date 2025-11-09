@@ -38,6 +38,8 @@ public class CarAlmanacApplication extends Application {
     }
 
     public static void main(String[] args) {
+        System.out.println("Приложение запущено!");
+        System.out.println(System.getProperty("file.encoding"));
         launch(args);
     }
 }

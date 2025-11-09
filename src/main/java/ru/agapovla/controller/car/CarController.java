@@ -53,10 +53,10 @@ public class CarController {
     public void onShowParts(){
         Car selectedCar = carList.getSelectionModel().getSelectedItem();
         List<Part> parts = partService.getPartsByCarId(selectedCar.getId());
-        windowManager.openWindow("/view/parts/parts-view.fxml", "Запчасти для " +
+        windowManager.replaceWindow("/view/parts/parts-view.fxml", "Запчасти для " +
                 selectedCar.getMark() + " " +
                 selectedCar.getModel() + " " +
-                selectedCar.getYear(), 800, 600, controller -> {
+                selectedCar.getYear(), carList, controller -> {
             if (controller instanceof PartController partController) {
                 partController.setParts(parts);
             }
