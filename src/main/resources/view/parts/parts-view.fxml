@@ -13,5 +13,9 @@
               prefWidth="520.0"
               prefHeight="300.0"/>
 
-    <Button layoutX="40.0" layoutY="370.0" text="Назад" onAction="#onBack"/>
+    <Button layoutX="40.0" layoutY="370.0" text="Добавить" onAction="#onAddPart"/>
+    <Button layoutX="120.0" layoutY="370.0" text="Изменить" onAction="#onEditPart"/>
+    <Button layoutX="200.0" layoutY="370.0" text="Удалить" onAction="#onDeletePart"/>
+
+    <Button layoutX="40.0" layoutY="410.0" text="Назад" onAction="#onBack"/>
 </AnchorPane>

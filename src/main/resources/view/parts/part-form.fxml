@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="179.0" prefWidth="374.0" xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.agapovla.controller.part.PartFormController">
+
+    <Label layoutX="40.0" layoutY="21.0" style="-fx-font-size: 18;" text="Меню добавления новой запчасти"/>
+
+    <Label layoutX="20" layoutY="60" text="Номер запчасти:"/>
+    <TextField fx:id="partNumberField" layoutX="130" layoutY="60"/>
+
+    <Label layoutX="20" layoutY="100" text="Производитель:"/>
+    <TextField fx:id="manufacturerField" layoutX="130" layoutY="100"/>
+
+    <Label layoutX="20" layoutY="140" text="Описание:"/>
+    <TextField fx:id="infoField" layoutX="130" layoutY="140"/>
+
+    <Label layoutX="20" layoutY="180" text="Цена:"/>
+    <TextField fx:id="priceField" layoutX="130" layoutY="180"/>
+
+    <Label layoutX="20" layoutY="220" text="Подходит?"/>
+    <CheckBox fx:id="doesFitCheckBox" layoutX="130" layoutY="220" text="Да"/>
+
+    <Label layoutX="20" layoutY="260" text="Установлена?"/>
+    <CheckBox fx:id="isInstalledCheckBox" layoutX="130" layoutY="260" text="Да"/>
+
+    <Button layoutX="20.0" layoutY="300.0" mnemonicParsing="false" onAction="#onSavePart"
+            text="Сохранить!"/>
+
+</AnchorPane>

@@ -6,7 +6,7 @@
 <AnchorPane prefHeight="179.0" prefWidth="374.0" xmlns="http://javafx.com/javafx/17.0.12"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.agapovla.controller.car.CarFormController">
 
-    <Label layoutX="40.0" layoutY="21.0" style="-fx-font-size: 18;" text="Меню добавления нового авто!"/>
+    <Label layoutX="40.0" layoutY="21.0" style="-fx-font-size: 18;" text="Меню добавления нового авто"/>
 
     <Label layoutX="20" layoutY="60" text="Марка:"/>
     <TextField fx:id="markField" layoutX="130" layoutY="60"/>

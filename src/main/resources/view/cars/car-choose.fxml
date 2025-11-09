@@ -6,7 +6,7 @@
 <AnchorPane prefHeight="179.0" prefWidth="374.0" xmlns="http://javafx.com/javafx/17.0.12"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.agapovla.controller.car.CarController">
 
-    <Label layoutX="40.0" layoutY="21.0" style="-fx-font-size: 18;" text="Меню выбора авто для поиска запчастей!"/>
+    <Label layoutX="40.0" layoutY="21.0" style="-fx-font-size: 18;" text="Меню выбора авто для поиска запчастей"/>
 
     <ListView fx:id="carList"
               layoutX="40.0" layoutY="50.0"

@@ -59,6 +59,7 @@ public class CarController {
                 selectedCar.getYear(), carList, controller -> {
             if (controller instanceof PartController partController) {
                 partController.setParts(parts);
+                partController.setCurrentCarUUID(selectedCar.getId());
             }
         });
     }
