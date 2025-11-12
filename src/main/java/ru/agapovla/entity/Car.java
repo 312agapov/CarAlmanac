@@ -9,11 +9,11 @@ import java.util.UUID;
 
 @Entity
 @Data
-@Table(name = "cars")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Table(name = "cars")
 public class Car {
 
     @Id

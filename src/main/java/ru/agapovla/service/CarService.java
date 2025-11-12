@@ -35,14 +35,13 @@ public class CarService {
         return carRepository.findAll();
     }
 
-    public Car editCar(Car car){
-        return carRepository.save(car);
+    public void editCar(Car car){
+        carRepository.save(car);
     }
 
-    public Car deleteCarByID(UUID carId){
-        Car deleteCar = carRepository.findById(carId).orElseThrow(() ->
+    public void deleteCarByID(UUID carId){
+        carRepository.findById(carId).orElseThrow(() ->
                 new NoSuchElementException("DELETE: Авто по такому UUID не найдено!"));
         carRepository.deleteById(carId);
-        return deleteCar;
     }
 }

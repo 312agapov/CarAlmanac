@@ -1,0 +1,97 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-init-tables
+      author: agapovla
+      changes:
+        # === CARS TABLE ===
+        - createTable:
+            tableName: cars
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: mark
+                  type: VARCHAR(255)
+              - column:
+                  name: model
+                  type: VARCHAR(255)
+              - column:
+                  name: generation
+                  type: VARCHAR(255)
+              - column:
+                  name: year
+                  type: INT
+              - column:
+                  name: gos_number
+                  type: VARCHAR(50)
+              - column:
+                  name: vin_or_frame
+                  type: VARCHAR(100)
+              - column:
+                  name: engine_model
+                  type: VARCHAR(100)
+              - column:
+                  name: transmission_type
+                  type: VARCHAR(100)
+
+        # === PARTS TABLE ===
+        - createTable:
+            tableName: parts
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: part_number
+                  type: VARCHAR(255)
+              - column:
+                  name: manufacturer
+                  type: VARCHAR(255)
+              - column:
+                  name: info
+                  type: TEXT
+              - column:
+                  name: price
+                  type: INT
+              - column:
+                  name: does_fit
+                  type: BOOLEAN
+              - column:
+                  name: is_installed
+                  type: BOOLEAN
+              - column:
+                  name: car_id
+                  type: UUID
+                  constraints:
+                    nullable: true
+                    foreignKeyName: fk_parts_car
+                    references: cars(id)
+                    onDelete: CASCADE
+
+        # === PHOTOS TABLE ===
+        - createTable:
+            tableName: photos
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: file_path
+                  type: VARCHAR(500)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: car_or_part_id
+                  type: UUID
+                  constraints:
+                    nullable: false

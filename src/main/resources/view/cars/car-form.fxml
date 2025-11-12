@@ -32,7 +32,11 @@
     <Label layoutX="20" layoutY="340" text="Тип трансмиссии:"/>
     <TextField fx:id="transmissionTypeField" layoutX="130" layoutY="340"/>
 
-    <Button layoutX="20.0" layoutY="380.0" mnemonicParsing="false" onAction="#onSaveCar"
+    <Label layoutX="20" layoutY="380" text="Фотографии:"/>
+    <Button layoutX="20" layoutY="395.0" mnemonicParsing="false" text="Выбрать фото" onAction="#onAddPhotos"/>
+    <FlowPane fx:id="photoPreviewPane" layoutX="40.0" layoutY="430.0" prefWidth="520.0" prefHeight="120.0" hgap="10" vgap="10"/>
+
+    <Button layoutX="20.0" layoutY="560.0" mnemonicParsing="false" onAction="#onSaveCar"
             text="Сохранить!"/>
 
 </AnchorPane>

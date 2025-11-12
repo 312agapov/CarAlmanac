@@ -32,6 +32,8 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.34'
 
     implementation 'org.springframework.boot:spring-boot-devtools'
+
+    implementation 'org.liquibase:liquibase-core:4.27.0'
 }
 
 application {

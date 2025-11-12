@@ -11,7 +11,6 @@ import org.springframework.stereotype.Controller;
 import ru.agapovla.entity.Car;
 import ru.agapovla.entity.Part;
 import ru.agapovla.manager.WindowManager;
-import ru.agapovla.service.CarService;
 import ru.agapovla.service.PartService;
 
 import java.util.UUID;
@@ -26,13 +25,13 @@ public class PartFormController {
     @Setter
     private UUID currentCarUUID;
 
-    private final CarService carService;
     private final PartService partService;
 
-    @FXML private TextField partNumberField;
-    @FXML private TextField manufacturerField;
-    @FXML private TextField infoField;
-    @FXML private TextField priceField;
+    @FXML private TextField partNumberField,
+            manufacturerField,
+            infoField,
+            priceField;
+
     @FXML private CheckBox doesFitCheckBox = new CheckBox("Подходит");
     @FXML private CheckBox isInstalledCheckBox = new CheckBox("Установлен");
 

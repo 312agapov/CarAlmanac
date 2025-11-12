@@ -35,14 +35,13 @@ public class PartService {
         return partRepository.findPartsByCarId(carId);
     }
 
-    public Part editPart(Part part){
-        return partRepository.save(part);
+    public void editPart(Part part){
+        partRepository.save(part);
     }
 
-    public Part deletePartById(UUID partId){
-        Part deletePart = partRepository.findById(partId).orElseThrow(() ->
+    public void deletePartById(UUID partId){
+        partRepository.findById(partId).orElseThrow(() ->
                 new NoSuchElementException("DELETE: Запчасти по такому UUID не найдено!"));
         partRepository.deleteById(partId);
-        return deletePart;
     }
 }
