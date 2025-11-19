@@ -30,7 +30,6 @@ public class PartController {
     @Setter
     private UUID currentCarUUID;
 
-    private final CarService carService;
     private final PartService partService;
 
     @FXML
@@ -49,7 +48,7 @@ public class PartController {
                 } else {
                     setText(part.getPartNumber() + " — " +
                             part.getManufacturer() + " — " +
-                            (part.getPrice() != null ? part.getPrice() + "₽" : "Цена не указана"));
+                            (part.getUnitPrice() != null ? part.getUnitPrice() + "₽" : "Цена не указана"));
                 }
             }
         });
@@ -57,7 +56,7 @@ public class PartController {
 
     @FXML
     public void onAddPart(){
-        windowManager.openWindow("/view/parts/part-form.fxml", "Добавить запчасть", 800, 600, controller -> {
+        windowManager.openWindow("/view/parts/part-form.fxml", "Добавить запчасть", 800, 650, controller -> {
             if (controller instanceof PartFormController partFormController){
                 partFormController.setCurrentCarUUID(currentCarUUID);
                 partFormController.setOnSaved(this::refreshList);
@@ -70,7 +69,7 @@ public class PartController {
         Part selectedPart = partList.getSelectionModel().getSelectedItem();
         if (selectedPart == null) return;
 
-        windowManager.openWindow("/view/parts/part-form.fxml", "Изменить запчасть", 800, 600, controller -> {
+        windowManager.openWindow("/view/parts/part-form.fxml", "Изменить запчасть", 800, 650, controller -> {
             if (controller instanceof PartFormController partFormController){
                 partFormController.setPart(selectedPart);
                 partFormController.setOnSaved(this::refreshList);

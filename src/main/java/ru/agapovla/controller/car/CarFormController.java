@@ -209,7 +209,7 @@ public class CarFormController {
         File directory = new File(uploadDir + "/cars/" +
                 editingCar.getMark() + "_" +
                 editingCar.getModel() + "_" +
-                editingCar.getVinOrFrame());
+                editingCar.getVinOrFrame() + "/!carPhotos/");
         if (!directory.exists()) {
             directory.mkdirs();
         }

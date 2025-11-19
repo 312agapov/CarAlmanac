@@ -20,8 +20,10 @@ public class Part {
 
     private String partNumber;
     private String manufacturer;
-    private String info;
-    private Integer price;
+    private String shortInfo;
+    private String fullInfo;
+    private Integer unitPrice;
+    private Integer amount;
     private Boolean doesFit;
     private Boolean isInstalled;
 

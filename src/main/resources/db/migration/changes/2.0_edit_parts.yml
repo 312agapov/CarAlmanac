@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002-edit-parts
+      author: agapovla
+      changes:
+        - renameColumn:
+            tableName: parts
+            oldColumnName: info
+            newColumnName: short_info
+            columnDataType: varchar(255)
+        - addColumn:
+            tableName: parts
+            columns:
+              - column:
+                  name: full_info
+                  type: varchar(1024)
+        - renameColumn:
+            tableName: parts
+            oldColumnName: price
+            newColumnName: unit_price
+            columnDataType: int
+        - addColumn:
+            tableName: parts
+            columns:
+              - column:
+                  name: amount
+                  type: int
+                  defaultValueNumeric: 1

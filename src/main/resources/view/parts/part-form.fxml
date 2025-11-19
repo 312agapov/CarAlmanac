@@ -14,19 +14,29 @@
     <Label layoutX="20" layoutY="100" text="Производитель:"/>
     <TextField fx:id="manufacturerField" layoutX="130" layoutY="100"/>
 
-    <Label layoutX="20" layoutY="140" text="Описание:"/>
-    <TextField fx:id="infoField" layoutX="130" layoutY="140"/>
+    <Label layoutX="20" layoutY="140" text="Краткое описание:"/>
+    <TextField fx:id="shortInfoField" layoutX="130" layoutY="140"/>
 
-    <Label layoutX="20" layoutY="180" text="Цена:"/>
-    <TextField fx:id="priceField" layoutX="130" layoutY="180"/>
+    <Label layoutX="20" layoutY="180" text="Полное писание:"/>
+    <TextField fx:id="fullInfoField" layoutX="130" layoutY="180"/>
 
-    <Label layoutX="20" layoutY="220" text="Подходит?"/>
-    <CheckBox fx:id="doesFitCheckBox" layoutX="130" layoutY="220" text="Да"/>
+    <Label layoutX="20" layoutY="220" text="Цена за штуку:"/>
+    <TextField fx:id="unitPriceField" layoutX="130" layoutY="220"/>
 
-    <Label layoutX="20" layoutY="260" text="Установлена?"/>
-    <CheckBox fx:id="isInstalledCheckBox" layoutX="130" layoutY="260" text="Да"/>
+    <Label layoutX="20" layoutY="260" text="Количество:"/>
+    <TextField fx:id="amountField" layoutX="130" layoutY="260"/>
 
-    <Button layoutX="20.0" layoutY="300.0" mnemonicParsing="false" onAction="#onSavePart"
+    <Label layoutX="20" layoutY="300" text="Подходит?"/>
+    <CheckBox fx:id="doesFitCheckBox" layoutX="130" layoutY="300" text="Да"/>
+
+    <Label layoutX="20" layoutY="340" text="Установлена?"/>
+    <CheckBox fx:id="isInstalledCheckBox" layoutX="130" layoutY="340" text="Да"/>
+
+    <Button layoutX="20.0" layoutY="380.0" mnemonicParsing="false" onAction="#onSavePart"
             text="Сохранить!"/>
+
+    <Label layoutX="20" layoutY="410" text="Фотографии:"/>
+    <Button layoutX="20" layoutY="430" mnemonicParsing="false" text="Выбрать фото" onAction="#onAddPhotos"/>
+    <FlowPane fx:id="photoPreviewPane" layoutX="40.0" layoutY="470" prefWidth="520.0" prefHeight="120.0" hgap="10" vgap="10"/>
 
 </AnchorPane>
