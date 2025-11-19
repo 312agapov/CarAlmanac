@@ -36,6 +36,15 @@ public class PartController {
     private ListView<Part> partList;
 
     @FXML
+    public void initialize() {
+        partList.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+                onEditPart();
+            }
+        });
+    }
+
+    @FXML
     public void setParts(List<Part> parts) {
         partList.setItems(FXCollections.observableArrayList(parts));
 

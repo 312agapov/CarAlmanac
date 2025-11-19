@@ -6,7 +6,7 @@
 <AnchorPane prefHeight="179.0" prefWidth="374.0" xmlns="http://javafx.com/javafx/17.0.12"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.agapovla.controller.car.CarFormController">
 
-    <Label layoutX="40.0" layoutY="21.0" style="-fx-font-size: 18;" text="Меню добавления нового авто"/>
+    <Label layoutX="20.0" layoutY="20.0" style="-fx-font-size: 18;" text="Меню добавления нового авто"/>
 
     <Label layoutX="20" layoutY="60" text="Марка:"/>
     <TextField fx:id="markField" layoutX="130" layoutY="60"/>
@@ -37,6 +37,6 @@
 
     <Label layoutX="20" layoutY="410" text="Фотографии:"/>
     <Button layoutX="20" layoutY="430" mnemonicParsing="false" text="Выбрать фото" onAction="#onAddPhotos"/>
-    <FlowPane fx:id="photoPreviewPane" layoutX="40" layoutY="430" prefWidth="520" prefHeight="120" hgap="10" vgap="10"/>
+    <FlowPane fx:id="photoPreviewPane" layoutX="20" layoutY="470" prefWidth="520" prefHeight="120" hgap="10" vgap="10"/>
 
 </AnchorPane>

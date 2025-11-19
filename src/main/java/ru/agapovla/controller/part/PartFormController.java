@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -52,9 +53,10 @@ public class PartFormController {
     @FXML private TextField partNumberField,
             manufacturerField,
             shortInfoField,
-            fullInfoField,
             unitPriceField,
             amountField;
+
+    @FXML private TextArea fullInfoField;
 
     @FXML private CheckBox doesFitCheckBox = new CheckBox("Подходит");
     @FXML private CheckBox isInstalledCheckBox = new CheckBox("Установлен");
@@ -99,6 +101,8 @@ public class PartFormController {
         existingPhotos.clear();
         existingPhotos.addAll(photoService.getPhotosByCarOrPartUUID(part.getId()));
         showPhotoPreviews();
+
+        javafx.application.Platform.runLater(() -> partNumberField.getParent().requestFocus());
     }
 
     @FXML

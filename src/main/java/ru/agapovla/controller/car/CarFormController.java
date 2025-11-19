@@ -86,6 +86,8 @@ public class CarFormController {
         existingPhotos.clear();
         existingPhotos.addAll(photoService.getPhotosByCarOrPartUUID(car.getId()));
         showPhotoPreviews();
+
+        javafx.application.Platform.runLater(() -> markField.getParent().requestFocus());
     }
 
     //при нажатии на кнопку "Сохранить!"
