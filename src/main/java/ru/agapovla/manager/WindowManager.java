@@ -4,12 +4,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.function.Consumer;
 
 @Component
@@ -37,6 +39,9 @@ public class WindowManager {
             Stage stage = new Stage();
             stage.setTitle(title);
             stage.setScene(new Scene(root, width, height));
+
+            setAppIcon(stage);
+
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -62,8 +67,24 @@ public class WindowManager {
                 stage.setTitle(title);
             }
 
+            setAppIcon(stage);
+
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    private void setAppIcon(Stage stage) {
+        try {
+            InputStream iconStream = getClass().getResourceAsStream("/icon.jpg");
+            if (iconStream != null) {
+                Image icon = new Image(iconStream, 64, 64, true, true);
+                stage.getIcons().add(icon);
+            } else {
+                System.err.println("Иконка icon.jpg не найдена в resources");
+            }
+        } catch (Exception e) {
+            System.err.println("Ошибка загрузки иконки: " + e.getMessage());
         }
     }
 }

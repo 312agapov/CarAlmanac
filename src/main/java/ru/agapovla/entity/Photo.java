@@ -15,7 +15,8 @@ import java.util.UUID;
 public class Photo {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue
+    @Column(columnDefinition = "VARCHAR(36)")
     private UUID id;
 
     private String filePath;

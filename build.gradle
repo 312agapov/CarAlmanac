@@ -6,7 +6,6 @@ plugins {
 }
 
 group = "ru.agapovla"
-version = "1.0-SNAPSHOT"
 
 java {
     toolchain {
@@ -26,7 +25,8 @@ javafx {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation("org.postgresql:postgresql:42.7.8")
+
+    implementation 'com.h2database:h2'
 
     compileOnly 'org.projectlombok:lombok:1.18.34'
     annotationProcessor 'org.projectlombok:lombok:1.18.34'
@@ -34,6 +34,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-devtools'
 
     implementation 'org.liquibase:liquibase-core:4.27.0'
+
+    implementation 'org.springframework.boot:spring-boot-starter-logging'
 }
 
 application {
@@ -45,4 +47,9 @@ tasks.withType(JavaExec).configureEach {
     systemProperty "sun.stdout.encoding", "UTF-8"
     systemProperty "sun.stderr.encoding", "UTF-8"
     jvmArgs = ['-Dfile.encoding=UTF-8', '-Dsun.stdout.encoding=UTF-8', '-Dsun.stderr.encoding=UTF-8']
+}
+
+bootJar {
+    archiveFileName = 'CarAlmanac.jar'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }

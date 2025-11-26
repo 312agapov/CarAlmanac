@@ -5,10 +5,13 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+
+import java.util.Objects;
 
 @SpringBootApplication
 public class CarAlmanacApplication extends Application {
@@ -28,6 +31,11 @@ public class CarAlmanacApplication extends Application {
         Parent root = loader.load();
         primaryStage.setTitle("Car Almanac");
         primaryStage.setScene(new Scene(root, -1, -1));
+
+        Image icon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/icon.jpg")),
+                64, 64, true, true);
+        primaryStage.getIcons().add(icon);
+
         primaryStage.show();
     }
 

@@ -2,20 +2,24 @@ spring:
   application:
     name: CarAlmanac
   datasource:
-    url: jdbc:postgresql://localhost:5432/almanac
-    username: postgres
-    password: postgres
-    driver-class-name: org.postgresql.Driver
+    url: "jdbc:h2:file:./database/almanac;DB_CLOSE_ON_EXIT=FALSE;"
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
   jpa:
     hibernate:
       ddl-auto: none
     show-sql: true
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+        dialect: org.hibernate.dialect.H2Dialect
   liquibase:
     enabled: true
     change-log: classpath:db/migration/db.changelog-master.yml
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
 
 app:
   upload-dir: uploads
