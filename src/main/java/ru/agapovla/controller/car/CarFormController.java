@@ -117,7 +117,8 @@ public class CarFormController {
                     .engineModel(engineModelField.getText())
                     .transmissionType(transmissionTypeField.getText())
                     .build();
-            editingCar = carService.addCar(editingCar);
+            carService.addCar(editingCar);
+            editingCar = null;
         }
 
         if (!selectedPhotos.isEmpty()){

@@ -15,8 +15,7 @@ import java.util.UUID;
 public class Part {
 
     @Id
-    @GeneratedValue
-    @Column(columnDefinition = "VARCHAR(36)")
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     private String partNumber;

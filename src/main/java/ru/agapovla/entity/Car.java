@@ -17,8 +17,7 @@ import java.util.UUID;
 public class Car {
 
     @Id
-    @GeneratedValue
-    @Column(columnDefinition = "VARCHAR(36)")
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     private String mark;
